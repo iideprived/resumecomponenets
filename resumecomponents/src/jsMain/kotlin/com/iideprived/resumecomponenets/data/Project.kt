@@ -1,4 +1,4 @@
-package com.iideprived.resumecomponenets.components.septsidebar
+package com.iideprived.resumecomponenets.data
 
 import com.iideprived.resumecomponenets.data.Icon
 

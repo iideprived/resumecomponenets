@@ -7,7 +7,7 @@ plugins {
     `maven-publish`
 }
 
-group = "com.iideprived.resumecomponenets"
+group = "com.iideprived.resumecomponents"
 version = "1.0-SNAPSHOT"
 
 kotlin {

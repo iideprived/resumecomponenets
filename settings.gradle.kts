@@ -8,4 +8,4 @@ pluginManagement {
 
 rootProject.name = "resumecomponenets"
 
-include(":resumecomponenets")
+include(":resumecomponents")

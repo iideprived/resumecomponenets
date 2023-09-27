@@ -1,4 +1,4 @@
-package com.iideprived.resumecomponenets.components.septsidebar
+package com.iideprived.resumecomponenets.data
 
 import org.jetbrains.compose.web.dom.ContentBuilder
 import org.w3c.dom.HTMLDivElement

@@ -2,6 +2,7 @@ package com.iideprived.resumecomponenets.components.septsidebar
 
 import androidx.compose.runtime.Composable
 import com.iideprived.resumecomponenets.baseStyle
+import com.iideprived.resumecomponenets.data.Project
 import com.iideprived.resumecomponenets.div
 import com.iideprived.resumecomponenets.style
 import com.varabyte.kobweb.compose.css.CSSFloat
