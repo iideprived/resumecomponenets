@@ -6,6 +6,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = "resumecomponenets"
+rootProject.name = "resumecomponents"
 
 include(":resumecomponents")
