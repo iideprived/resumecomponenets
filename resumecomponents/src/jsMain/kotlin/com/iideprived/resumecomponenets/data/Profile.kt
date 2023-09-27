@@ -1,8 +1,5 @@
 package com.iideprived.resumecomponenets.data
 
-import com.iideprived.resumecomponenets.components.septsidebar.*
-
-
 data class Profile(
     val headerAndSummary: HeaderAndSummary,
     val currentLocation: CurrentLocation,
