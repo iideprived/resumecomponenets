@@ -1,2 +1,6 @@
 jdk:
   - openjdk17
+  - install:
+      - echo "Building the resumecomponents Library"
+      - chmod +x gradlew
+      - ./gradlew :resumecomponents:clean :resumecomponents:publishToMavenLocal

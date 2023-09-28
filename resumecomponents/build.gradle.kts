@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.iideprived.resumecomponents"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 kotlin {
     configAsKobwebLibrary()
@@ -31,14 +31,13 @@ kotlin {
     }
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("Maven") {
-                groupId = "com.iideprived.resumecomponents"
-                artifactId = "resumecomponents"
-                version = "1.0-SNAPSHOT"
-            }
+publishing {
+    publications {
+        register("mavenJsLibrary", MavenPublication::class) {
+            from(components["kotlin"])
+            groupId = "com.iideprived.resumecomponents"
+            artifactId = "resumecomponents"
+            version = "1.0.0"
         }
     }
 }
