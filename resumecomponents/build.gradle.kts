@@ -30,3 +30,15 @@ kotlin {
         }
     }
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("Maven") {
+                groupId = "com.iideprived.resumecomponents"
+                artifactId = "resumecomponents"
+                version = "1.0-SNAPSHOT"
+            }
+        }
+    }
+}
