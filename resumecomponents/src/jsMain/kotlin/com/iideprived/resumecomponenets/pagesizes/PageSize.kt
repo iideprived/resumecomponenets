@@ -1,5 +1,6 @@
 package com.iideprived.resumecomponenets.pagesizes
 
+
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.silk.components.style.visited
@@ -10,19 +11,25 @@ import org.jetbrains.compose.web.css.*
 
 enum class PageSize(
     val width: String,
-    val height: String
+    val height: String,
+    _sizeName: String? = null
 ) {
-    USLetter("8.5in", "11in"),
+    Letter("8.5in", "11in"),
     A4("210mm", "297mm")
+    ;
+
+    val sizeName: String = _sizeName ?: name
 }
 
 fun SilkStylesheet.setupPage(
-    pageSize: PageSize = PageSize.USLetter,
+    pageSize: PageSize = PageSize.Letter,
+    backgroundColor: CSSColorValue = rgb(240, 240, 240),
+    linkColor: CSSColorValue = rgb(130, 130, 130),
 ){
     registerBaseStyle("body, html") {
         Modifier.styleModifier {
-            backgroundColor(rgb(240, 240, 240))
-            margin(0.px)
+            backgroundColor(backgroundColor)
+            property("overflow" ,"hidden")
         }
     }
 
@@ -36,13 +43,6 @@ fun SilkStylesheet.setupPage(
         Modifier.styleModifier { boxSizing("inherit")}
     }
 
-    registerBaseStyle("body"){
-        Modifier.styleModifier {
-            property("width", pageSize.width)
-            property("height", pageSize.height)
-        }
-    }
-
     registerBaseStyle("p"){
         Modifier.styleModifier {
             marginTop(0.px)
@@ -53,12 +53,12 @@ fun SilkStylesheet.setupPage(
 
     registerStyle("a"){
         Modifier.styleModifier {
-            color(rgb(130, 130, 130))
+            color(linkColor)
         }
 
         visited {
             Modifier.styleModifier {
-                color(rgb(130, 130, 130))
+                color(linkColor)
             }
         }
     }
@@ -77,7 +77,16 @@ fun SilkStylesheet.setupPage(
                 property("margin", "0")
                 property("width", pageSize.width)
                 property("height", pageSize.height)
-                property("overflow" ,"auto")
+                display(DisplayStyle.Block)
+                justifyContent(JustifyContent.Start)
+                alignItems(AlignItems.Start)
+            }
+        }
+
+        cssRule(CSSMediaQuery.Raw("page")){
+            Modifier.styleModifier {
+                property("size", pageSize.sizeName)
+                property("margin", "0")
             }
         }
 
@@ -85,7 +94,9 @@ fun SilkStylesheet.setupPage(
             Modifier.styleModifier {
                 property("width", "100%")
                 property("height", "100%")
-                property("overflow" ,"hidden")
+                display(DisplayStyle.Flex)
+                justifyContent(JustifyContent.Center)
+                alignItems(AlignItems.Center)
                 property("margin", "64px auto")
             }
         }
