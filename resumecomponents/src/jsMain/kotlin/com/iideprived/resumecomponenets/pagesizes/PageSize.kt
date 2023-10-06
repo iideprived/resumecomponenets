@@ -77,9 +77,6 @@ fun SilkStylesheet.setupPage(
                 property("margin", "0")
                 property("width", pageSize.width)
                 property("height", pageSize.height)
-                display(DisplayStyle.Block)
-                justifyContent(JustifyContent.Start)
-                alignItems(AlignItems.Start)
             }
         }
 
@@ -94,9 +91,6 @@ fun SilkStylesheet.setupPage(
             Modifier.styleModifier {
                 property("width", "100%")
                 property("height", "100%")
-                display(DisplayStyle.Flex)
-                justifyContent(JustifyContent.Center)
-                alignItems(AlignItems.Center)
                 property("margin", "64px auto")
             }
         }
